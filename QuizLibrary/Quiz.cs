@@ -20,10 +20,6 @@ namespace QuizLibrary
             _dataAccess = dataAccess;
         }
 
-        public Quiz()
-        {
-        }
-
         public void Run()
         {
             ImportQuizData();
@@ -33,24 +29,29 @@ namespace QuizLibrary
             EndQuiz();
         }
 
-        public void ImportQuizData()
+        public string[] ImportQuizData()
         {
-
-            try { input = _dataAccess.LoadFile(); }
+            try 
+            { 
+                input = _dataAccess.LoadFile();
+                return input;
+            }
             catch (FileNotFoundException ex)
             {
                 Console.WriteLine(Messages.ErrorMessage(ex.Message));
                 isDone = true;
                 EndQuiz();
-                Environment.Exit(0);
+                //Environment.Exit(0);
             }
             catch (Exception e)
             {
                 Console.WriteLine(Messages.ErrorMessage(e.Message));
                 isDone = true;
                 EndQuiz();
-                Environment.Exit(0);
+                //Environment.Exit(0);
             }
+
+            return null;
         }
 
         int correct;
@@ -143,7 +144,6 @@ namespace QuizLibrary
         public void EndQuiz()
         {
             Console.WriteLine(Messages.EndQuiz());
-            Console.ReadLine();
         }
     }
 }

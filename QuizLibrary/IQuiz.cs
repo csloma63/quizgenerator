@@ -8,7 +8,7 @@ namespace QuizLibrary
         void DisplayScore();
         void EndQuiz();
         Question GetNextQuestion();
-        void ImportQuizData();
+        string[] ImportQuizData();
         void ProcessInput();
         void Run();
         void TakeQuiz();

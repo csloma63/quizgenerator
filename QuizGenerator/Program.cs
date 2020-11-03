@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using System;
 
 namespace QuizGenerator
 {
@@ -13,6 +14,9 @@ namespace QuizGenerator
                 var app = scope.Resolve<IApplication>();
                 app.Run();
             }
+
+            Console.ReadLine();
+            Environment.Exit(0);
         }
     }
 }
