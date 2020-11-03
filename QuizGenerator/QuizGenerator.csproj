@@ -83,5 +83,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuizLibrary\QuizLibrary.csproj">
+      <Project>{0c44c8f8-f7ed-4f70-9bd4-f62781b35153}</Project>
+      <Name>QuizLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

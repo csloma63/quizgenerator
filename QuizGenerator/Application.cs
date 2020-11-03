@@ -4,19 +4,16 @@ namespace QuizGenerator
 {
     public class Application : IApplication
     {
-        public class Application : IApplication
+        IQuiz _quiz;
+
+        public Application(IQuiz quiz)
         {
-            IQuiz _quiz;
+            _quiz = quiz;
+        }
 
-            public Application(IQuiz quiz)
-            {
-                _quiz = quiz;
-            }
-
-            public void Run()
-            {
-                _quiz.Run();
-            }
+        public void Run()
+        {
+            _quiz.Run();
         }
     }
 }
